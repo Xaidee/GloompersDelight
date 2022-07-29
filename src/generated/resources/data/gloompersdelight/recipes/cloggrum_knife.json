@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " #",
+    "/ "
+  ],
+  "key": {
+    "#": {
+      "item": "undergarden:cloggrum_ingot"
+    },
+    "/": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "gloompersdelight:cloggrum_knife"
+  }
+}

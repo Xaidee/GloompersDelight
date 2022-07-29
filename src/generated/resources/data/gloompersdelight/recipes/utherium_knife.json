@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " #",
+    "/ "
+  ],
+  "key": {
+    "#": {
+      "item": "undergarden:utherium_crystal"
+    },
+    "/": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "gloompersdelight:utherium_knife"
+  }
+}

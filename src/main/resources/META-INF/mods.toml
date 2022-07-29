@@ -1,0 +1,38 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+issueTrackerURL="https://github.com/xaidee/GloompersDelight/issues/"
+license="The MIT License (MIT)"
+
+[[mods]]
+modId="gloompersdelight"
+version="1.18.2-0.1.0"
+displayName="Gloomper's Delight"
+# updateJSONURL=""
+displayURL="https://www.curseforge.com/minecraft/mc-mods/gloompers-delight"
+logoFile="Gloomper's Delight.png"
+logoBlur=false
+itemIcon="undergarden:smog_vent"
+configBackground="undergarden:textures/block/shiverstone_bricks.png"
+credits='''
+Thanks goes to Quek for their amazing dimension mod and Vectorwing's perfect food expansion mod!
+
+Textures done by the very talented artist Frenderman!
+'''
+authors="Xaidee Quartz"
+description='''
+An addon to the Undergarden and Farmer's Delight mods, bringing you questonably eatable meals and delights since 2022!
+'''
+
+[[dependencies.gloompersdelight]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40.1.0,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.gloompersdelight]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18,1.19)"
+    ordering="NONE"
+    side="BOTH"

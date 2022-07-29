@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "item": "undergarden:veil_mushroom"
+    },
+    {
+      "item": "undergarden:veil_mushroom"
+    },
+    {
+      "item": "undergarden:veil_mushroom"
+    }
+  ],
+  "result": {
+    "item": "undergarden:veiled_stew"
+  },
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "experience": 0.2,
+  "cookingtime": 200
+}

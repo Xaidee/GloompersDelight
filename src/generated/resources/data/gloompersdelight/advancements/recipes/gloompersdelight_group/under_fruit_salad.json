@@ -1,0 +1,49 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "gloompersdelight:under_fruit_salad"
+    ]
+  },
+  "criteria": {
+    "has_undergarden_fruits": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "gloompersdelight:cranberries"
+            ]
+          },
+          {
+            "items": [
+              "undergarden:droopvine_item"
+            ]
+          },
+          {
+            "items": [
+              "undergarden:blisterberry"
+            ]
+          },
+          {
+            "items": [
+              "gloompersdelight:gloomgourd_slice"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "gloompersdelight:under_fruit_salad"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_undergarden_fruits",
+      "has_the_recipe"
+    ]
+  ]
+}

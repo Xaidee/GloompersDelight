@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "undergarden:ditchbulb"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  },
+  "result": [
+    {
+      "item": "undergarden:ditchbulb_paste"
+    },
+    {
+      "item": "minecraft:orange_dye",
+      "chance": 0.33
+    }
+  ]
+}
