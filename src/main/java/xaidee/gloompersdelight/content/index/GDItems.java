@@ -11,6 +11,7 @@ import quek.undergarden.registry.UGItemTiers;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import xaidee.gloompersdelight.GloompersDelight;
 import xaidee.gloompersdelight.content.FoodValues;
+import xaidee.gloompersdelight.content.item.CranberryJuiceItem;
 import xaidee.gloompersdelight.content.item.tool.GDKnifeItem;
 
 public class GDItems {
@@ -40,13 +41,16 @@ public class GDItems {
     public static final RegistryObject<Item> GLOOMGOURD_SLICE = ITEMS.register("gloomgourd_slice",
             () -> new Item(new Item.Properties().food(FoodValues.GLOOMGOURD_SLICE).tab(GDItemGroups.GROUP)));
 
+    public static final RegistryObject<Item> CRANBERRY_JUICE = ITEMS.register("cranberry_juice",
+            () -> new CranberryJuiceItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).tab(GDItemGroups.GROUP)));
+
     // Sweets
     public static final RegistryObject<Item> SWIVEL_FLOSS = ITEMS.register("swivel_floss",
             () -> new Item(new Item.Properties().food(FoodValues.SWIVEL_FLOSS).tab(GDItemGroups.GROUP)));
 
     // Basic Meals
     public static final RegistryObject<Item> UNDER_FRUIT_SALAD = ITEMS.register("under_fruit_salad",
-            () -> new ConsumableItem(new Item.Properties().food(FoodValues.FRUIT_SALAD).tab(GDItemGroups.GROUP), true));
+            () -> new ConsumableItem(new Item.Properties().food(FoodValues.FRUIT_SALAD).craftRemainder(Items.BOWL).stacksTo(16).tab(GDItemGroups.GROUP), true));
 
     // Soups and Stews
 

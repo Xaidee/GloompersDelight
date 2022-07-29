@@ -1,5 +1,6 @@
 package xaidee.gloompersdelight;
 
+import com.google.common.collect.ImmutableList;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.data.DataGenerator;
@@ -23,6 +24,7 @@ import quek.undergarden.entity.projectile.slingshot.SlingshotProjectile;
 import quek.undergarden.item.tool.slingshot.AbstractSlingshotAmmoBehavior;
 import quek.undergarden.item.tool.slingshot.SlingshotItem;
 import quek.undergarden.registry.UGItems;
+import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import xaidee.gloompersdelight.client.GDClient;
 import xaidee.gloompersdelight.content.entity.projectile.slingshot.RottenTomato;
