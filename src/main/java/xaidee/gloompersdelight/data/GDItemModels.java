@@ -25,6 +25,7 @@ public class GDItemModels extends GDItemModelProvider {
 
         normalItem(GDItems.CRANBERRIES);
         normalItem(GDItems.GLOOMGOURD_SLICE);
+        normalItem(GDItems.BLOOD_BOTTLE);
         normalItem(GDItems.UNDER_FRUIT_SALAD);
         normalItem(GDItems.SWIVEL_FLOSS);
     }

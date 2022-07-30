@@ -60,6 +60,20 @@ public class GDRecipes extends GDRecipeProvider {
                 .unlockedBy("has_straw", has(ModItems.STRAW.get()))
                 .save(consumer, name("deepsoil_organic_compost_from_tree_bark"));
 
+        ShapelessRecipeBuilder.shapeless(GDItems.BLOOD_BOTTLE.get(), 4)
+                .requires(UGBlocks.BLOOD_MUSHROOM_GLOBULE.get())
+                .requires(Items.GLASS_BOTTLE, 4)
+                .unlockedBy("has_blood_mushroom_globule", has(UGBlocks.BLOOD_MUSHROOM_GLOBULE.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(UGBlocks.BLOOD_MUSHROOM_GLOBULE.get())
+                .pattern("AA")
+                .pattern("AA")
+                .define('A', GDItems.BLOOD_BOTTLE.get())
+                .unlockedBy("has_blood_bottle", has(GDItems.BLOOD_BOTTLE.get()))
+                .save(consumer);
+
+
         ShapedRecipeBuilder.shaped(UGBlocks.GLOOMGOURD.get())
                 .pattern("AA")
                 .pattern("AA")
@@ -70,6 +84,15 @@ public class GDRecipes extends GDRecipeProvider {
                 .requires(GDItems.GLOOMGOURD_SLICE.get())
                 .unlockedBy("has_gloomgourd_slice", has(GDItems.GLOOMGOURD_SLICE.get()))
                 .save(consumer, name("gloomgourd_seeds_from_slice"));
+
+        ShapedRecipeBuilder.shaped(GDItems.CRANBERRY_JUICE.get())
+                .pattern("AAB")
+                .pattern("AAC")
+                .define('A', GDItems.CRANBERRIES.get())
+                .define('B', Items.SUGAR)
+                .define('C', Items.GLASS_BOTTLE)
+                .unlockedBy("has_cranberries", has(GDItems.CRANBERRIES.get()))
+                .save(consumer);
 
         ShapelessRecipeBuilder.shapeless(GDItems.UNDER_FRUIT_SALAD.get())
                 .requires(GDItems.CRANBERRIES.get())
@@ -120,6 +143,13 @@ public class GDRecipes extends GDRecipeProvider {
                 .addIngredient(UGBlocks.BLOOD_MUSHROOM.get())
                 .addIngredient(UGBlocks.BLOOD_MUSHROOM.get())
                 .build(consumer, name("cooking/bloody_stew"));
+
+        CookingPotRecipeBuilder.cookingPotRecipe(GDItems.GLOOMGOUD_SOUP.get(), 1, 200, 0.35F, Items.BOWL)
+                .addIngredient(GDItems.GLOOMGOURD_SLICE.get())
+                .addIngredient(UGItems.UNDERBEANS.get())
+                .addIngredient(UGItems.RAW_GLOOMPER_LEG.get())
+                .addIngredient(GDItems.BLOOD_BOTTLE.get())
+                .build(consumer);
     }
 
     private ResourceLocation name(String name) {

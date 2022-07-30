@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "gloompersdelight:cranberry_juice"
+    ]
+  },
+  "criteria": {
+    "has_cranberries": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "gloompersdelight:cranberries"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "gloompersdelight:cranberry_juice"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cranberries",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAB",
+    "AAC"
+  ],
+  "key": {
+    "A": {
+      "item": "gloompersdelight:cranberries"
+    },
+    "B": {
+      "item": "minecraft:sugar"
+    },
+    "C": {
+      "item": "minecraft:glass_bottle"
+    }
+  },
+  "result": {
+    "item": "gloompersdelight:cranberry_juice"
+  }
+}
