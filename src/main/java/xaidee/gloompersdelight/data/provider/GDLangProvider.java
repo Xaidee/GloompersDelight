@@ -97,6 +97,10 @@ public abstract class GDLangProvider implements DataProvider {
         add("item.minecraft.tipped_arrow.effect." + ForgeRegistries.POTIONS.getKey(potion.get()).getPath(), "Arrow of " + name);
     }
 
+    public void addTooltip(Supplier<? extends Item> item, String tooltip) {
+        add("tooltip." + GloompersDelight.MOD_ID + "." + ForgeRegistries.ITEMS.getKey(item.get()).getPath(), tooltip);
+    }
+
     public void addDisc(Supplier<? extends RecordItem> disc, String desc) {
         addItem(disc, "Music Disc");
         add(disc.get().getDescriptionId() + ".desc", desc);

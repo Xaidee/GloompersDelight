@@ -24,7 +24,6 @@ public class GDLangUS extends GDLangProvider {
 
         addSubLocaleTranslations();
 
-
         /*
             Automatically create translations for blocks and items based on their registry name.
 
