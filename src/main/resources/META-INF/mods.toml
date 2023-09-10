@@ -1,11 +1,11 @@
 modLoader="javafml"
-loaderVersion="[40,)"
+loaderVersion="[46,)"
 issueTrackerURL="https://github.com/xaidee/GloompersDelight/issues/"
 license="The MIT License (MIT)"
 
 [[mods]]
 modId="gloompersdelight"
-version="1.18.2-0.1.0"
+version="${file.jarVersion}"
 displayName="Gloomper's Delight"
 # updateJSONURL=""
 displayURL="https://www.curseforge.com/minecraft/mc-mods/gloompers-delight"
@@ -20,19 +20,19 @@ Textures done by the very talented artist Frenderman!
 '''
 authors="Xaidee Quartz"
 description='''
-An addon to the Undergarden and Farmer's Delight mods, bringing you questonably eatable meals and delights since 2022!
+An addon to the Undergarden and Farmer's Delight mods.
 '''
 
 [[dependencies.gloompersdelight]]
     modId="forge"
     mandatory=true
-    versionRange="[40.1.0,)"
+    versionRange="[46,]"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.gloompersdelight]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18,1.19)"
+    versionRange="[1.20,1.21)"
     ordering="NONE"
     side="BOTH"

@@ -1,14 +1,15 @@
 package xaidee.gloompersdelight.data;
 
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import xaidee.gloompersdelight.content.index.GDItems;
 import xaidee.gloompersdelight.data.provider.GDItemModelProvider;
 
 public class GDItemModels extends GDItemModelProvider {
 
-    public GDItemModels(DataGenerator gen, ExistingFileHelper help) {
-        super(gen, help);
+    public GDItemModels(PackOutput output, ExistingFileHelper help) {
+        super(output, help);
     }
 
     @Override
@@ -22,11 +23,5 @@ public class GDItemModels extends GDItemModelProvider {
         toolItem(GDItems.FROSTSTEEL_KNIFE);
         toolItem(GDItems.UTHERIUM_KNIFE);
         toolItem(GDItems.FORGOTTEN_KNIFE);
-
-        normalItem(GDItems.CRANBERRIES);
-        normalItem(GDItems.GLOOMGOURD_SLICE);
-        normalItem(GDItems.BLOOD_BOTTLE);
-        normalItem(GDItems.UNDER_FRUIT_SALAD);
-        normalItem(GDItems.SWIVEL_FLOSS);
     }
 }

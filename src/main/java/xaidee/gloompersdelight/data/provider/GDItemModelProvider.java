@@ -1,6 +1,7 @@
 package xaidee.gloompersdelight.data.provider;
 
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -14,12 +15,12 @@ import java.util.function.Supplier;
 
 public abstract class GDItemModelProvider extends ItemModelProvider {
 
-    public GDItemModelProvider(DataGenerator gen, ExistingFileHelper help) {
-        super(gen, GloompersDelight.MOD_ID, help);
+    public GDItemModelProvider(PackOutput output, ExistingFileHelper fileHelper) {
+        super(output, GloompersDelight.MOD_ID, fileHelper);
     }
 
     private String blockName(Supplier<? extends Block> block) {
-        return block.get().getRegistryName().getPath();
+        return ForgeRegistries.BLOCKS.getKey(block.get()).getPath();
     }
 
     private ResourceLocation texture(String name) {
@@ -49,8 +50,8 @@ public abstract class GDItemModelProvider extends ItemModelProvider {
     }
 
     public ItemModelBuilder normalItem(Supplier<? extends Item> item) {
-        return withExistingParent(item.get().getRegistryName().getPath(), mcLoc("item/generated"))
-                .texture("layer0", modLoc("item/" + item.get().getRegistryName().getPath()));
+        return withExistingParent(ForgeRegistries.ITEMS.getKey(item.get()).getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("item/" + ForgeRegistries.ITEMS.getKey(item.get()).getPath()));
     }
 
     public ItemModelBuilder toolItem(Supplier<? extends Item> item) {

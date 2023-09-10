@@ -5,16 +5,16 @@
       "item": "undergarden:ditchbulb"
     }
   ],
-  "tool": {
-    "tag": "forge:tools/knives"
-  },
   "result": [
     {
       "item": "undergarden:ditchbulb_paste"
     },
     {
-      "item": "minecraft:orange_dye",
-      "chance": 0.33
+      "chance": 0.33,
+      "item": "minecraft:orange_dye"
     }
-  ]
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
 }

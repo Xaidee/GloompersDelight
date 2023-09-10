@@ -5,13 +5,13 @@
       "item": "undergarden:smogstem_trapdoor"
     }
   ],
-  "tool": {
-    "type": "farmersdelight:tool_action",
-    "action": "axe_dig"
-  },
   "result": [
     {
       "item": "undergarden:smogstem_planks"
     }
-  ]
+  ],
+  "tool": {
+    "type": "farmersdelight:tool_action",
+    "action": "axe_dig"
+  }
 }

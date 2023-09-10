@@ -1,7 +1,9 @@
 package xaidee.gloompersdelight.data;
 
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
@@ -16,24 +18,23 @@ import xaidee.gloompersdelight.data.provider.GDRecipeProvider;
 
 import java.util.function.Consumer;
 
-import static net.minecraft.advancements.critereon.InventoryChangeTrigger.TriggerInstance.hasItems;
 import static vectorwing.farmersdelight.data.recipe.CookingRecipes.NORMAL_COOKING;
 
 public class GDRecipes extends GDRecipeProvider {
 
-    public GDRecipes(DataGenerator generator) {
-        super(generator);
+    public GDRecipes(PackOutput output) {
+        super(output);
     }
 
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
+    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         makeKnife(GDItems.CLOGGRUM_KNIFE, UGItems.CLOGGRUM_INGOT).save(consumer);
         makeKnife(GDItems.FROSTSTEEL_KNIFE, UGItems.FROSTSTEEL_INGOT).save(consumer);
         makeKnife(GDItems.UTHERIUM_KNIFE, UGItems.UTHERIUM_CRYSTAL).save(consumer);
 
         smithingForgotten(GDItems.CLOGGRUM_KNIFE, GDItems.FORGOTTEN_KNIFE).save(consumer, name("forgotten_knife_smithing"));
 
-        ShapelessRecipeBuilder.shapeless(ModItems.ORGANIC_COMPOST.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.ORGANIC_COMPOST.get())
                 .requires(UGBlocks.DEEPSOIL.get())
                 .requires(Items.ROTTEN_FLESH)
                 .requires(Items.ROTTEN_FLESH)
@@ -46,7 +47,7 @@ public class GDRecipes extends GDRecipeProvider {
                 .unlockedBy("has_rotten_flesh", has(Items.ROTTEN_FLESH))
                 .unlockedBy("has_straw", has(ModItems.STRAW.get()))
                 .save(consumer, name("deepsoil_organic_compost_from_rotten_flesh"));
-        ShapelessRecipeBuilder.shapeless(ModItems.ORGANIC_COMPOST.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.ORGANIC_COMPOST.get())
                 .requires(UGBlocks.DEEPSOIL.get())
                 .requires(ModItems.STRAW.get())
                 .requires(ModItems.STRAW.get())
@@ -60,50 +61,6 @@ public class GDRecipes extends GDRecipeProvider {
                 .unlockedBy("has_straw", has(ModItems.STRAW.get()))
                 .save(consumer, name("deepsoil_organic_compost_from_tree_bark"));
 
-        ShapelessRecipeBuilder.shapeless(GDItems.BLOOD_BOTTLE.get(), 4)
-                .requires(UGBlocks.BLOOD_MUSHROOM_GLOBULE.get())
-                .requires(Items.GLASS_BOTTLE, 4)
-                .unlockedBy("has_blood_mushroom_globule", has(UGBlocks.BLOOD_MUSHROOM_GLOBULE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(UGBlocks.BLOOD_MUSHROOM_GLOBULE.get())
-                .pattern("AA")
-                .pattern("AA")
-                .define('A', GDItems.BLOOD_BOTTLE.get())
-                .unlockedBy("has_blood_bottle", has(GDItems.BLOOD_BOTTLE.get()))
-                .save(consumer);
-
-
-        ShapedRecipeBuilder.shaped(UGBlocks.GLOOMGOURD.get())
-                .pattern("AA")
-                .pattern("AA")
-                .define('A', GDItems.GLOOMGOURD_SLICE.get())
-                .unlockedBy("has_gloomgourd_slice", has(GDItems.GLOOMGOURD_SLICE.get()))
-                .save(consumer, name("gloomgourd_from_slices"));
-        ShapelessRecipeBuilder.shapeless(UGItems.GLOOMGOURD_SEEDS.get())
-                .requires(GDItems.GLOOMGOURD_SLICE.get())
-                .unlockedBy("has_gloomgourd_slice", has(GDItems.GLOOMGOURD_SLICE.get()))
-                .save(consumer, name("gloomgourd_seeds_from_slice"));
-
-        ShapedRecipeBuilder.shaped(GDItems.CRANBERRY_JUICE.get())
-                .pattern("AAB")
-                .pattern("AAC")
-                .define('A', GDItems.CRANBERRIES.get())
-                .define('B', Items.SUGAR)
-                .define('C', Items.GLASS_BOTTLE)
-                .unlockedBy("has_cranberries", has(GDItems.CRANBERRIES.get()))
-                .save(consumer);
-
-        ShapelessRecipeBuilder.shapeless(GDItems.UNDER_FRUIT_SALAD.get())
-                .requires(GDItems.CRANBERRIES.get())
-                .requires(UGItems.DROOPFRUIT.get(), 2)
-                .requires(UGItems.BLISTERBERRY.get(), 2)
-                .requires(GDItems.GLOOMGOURD_SLICE.get())
-                .requires(Items.BOWL)
-                .unlockedBy("has_undergarden_fruits", hasItems(GDItems.CRANBERRIES.get(), UGItems.DROOPFRUIT.get(), UGItems.BLISTERBERRY.get(), GDItems.GLOOMGOURD_SLICE.get()))
-                .save(consumer);
-
-
         // Cutting Recipes
         knifeCut(Items.BLUE_DYE, UGBlocks.INDIGO_MUSHROOM.get()).build(consumer, name("cutting/blue_dye_from_indigo_mushroom"));
         knifeCut(Items.WHITE_DYE, UGBlocks.VEIL_MUSHROOM.get()).build(consumer, name("cutting/white_dye_from_veil_mushroom"));
@@ -112,7 +69,7 @@ public class GDRecipes extends GDRecipeProvider {
 
         knifeCut(UGItems.DITCHBULB_PASTE.get(), UGItems.DITCHBULB.get()).addResultWithChance(Items.ORANGE_DYE, 0.33F).build(consumer, name("cutting/ditchbulb_paste"));
 
-        knifeCut(GDItems.GLOOMGOURD_SLICE.get(), UGBlocks.GLOOMGOURD.get(), 4).build(consumer, name("cutting/gloomgourd_slice"));
+        //knifeCut(GDItems.GLOOMGOURD_SLICE.get(), UGBlocks.GLOOMGOURD.get(), 4).build(consumer, name("cutting/gloomgourd_slice"));
 
         stripLogForBark(UGBlocks.GRONGLE_LOG.get(), UGBlocks.STRIPPED_GRONGLE_LOG.get()).build(consumer, name("cutting/bark_from_grongle"));
         stripLogForBark(UGBlocks.SMOGSTEM_LOG.get(), UGBlocks.STRIPPED_SMOGSTEM_LOG.get()).build(consumer, name("cutting/bark_from_smogstem"));
@@ -143,13 +100,6 @@ public class GDRecipes extends GDRecipeProvider {
                 .addIngredient(UGBlocks.BLOOD_MUSHROOM.get())
                 .addIngredient(UGBlocks.BLOOD_MUSHROOM.get())
                 .build(consumer, name("cooking/bloody_stew"));
-
-        CookingPotRecipeBuilder.cookingPotRecipe(GDItems.GLOOMGOUD_SOUP.get(), 1, 200, 0.35F, Items.BOWL)
-                .addIngredient(GDItems.GLOOMGOURD_SLICE.get())
-                .addIngredient(UGItems.UNDERBEANS.get())
-                .addIngredient(UGItems.RAW_GLOOMPER_LEG.get())
-                .addIngredient(GDItems.BLOOD_BOTTLE.get())
-                .build(consumer);
     }
 
     private ResourceLocation name(String name) {

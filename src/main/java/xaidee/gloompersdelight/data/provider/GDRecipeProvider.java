@@ -1,7 +1,9 @@
 package xaidee.gloompersdelight.data.provider;
 
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
@@ -22,14 +24,14 @@ import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class GDRecipeProvider extends UGRecipeProvider {
+public abstract class GDRecipeProvider extends UGRecipeProvider {
 
-    public GDRecipeProvider(DataGenerator generator) {
-        super(generator);
+    public GDRecipeProvider(PackOutput output) {
+        super(output);
     }
 
     public ShapedRecipeBuilder makeKnife(Supplier<? extends Item> knifeOut, Supplier<? extends Item> materialIn) {
-        return ShapedRecipeBuilder.shaped(knifeOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, knifeOut.get())
                 .pattern(" #")
                 .pattern("/ ")
                 .define('#', materialIn.get())
@@ -64,7 +66,7 @@ public class GDRecipeProvider extends UGRecipeProvider {
     public CuttingBoardRecipeBuilder stripLogForBark(ItemLike log, ItemLike strippedLog) {
         return CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ToolActionIngredient(ToolActions.AXE_STRIP), strippedLog)
                 .addResult(ModItems.TREE_BARK.get())
-                .addSound(SoundEvents.AXE_STRIP.getRegistryName().toString());
+                .addSound(ForgeRegistries.SOUND_EVENTS.getKey(SoundEvents.AXE_STRIP).toString());
     }
 
     private static ResourceLocation name(String name) {

@@ -1,21 +1,6 @@
 {
-  "block.gloompersdelight.blood_mushroom_colony": "Blood Mushroom Colony",
-  "block.gloompersdelight.chili_peppers": "Chili Peppers",
-  "block.gloompersdelight.indigo_mushroom_colony": "Indigo Mushroom Colony",
-  "block.gloompersdelight.ink_mushroom_colony": "Ink Mushroom Colony",
-  "block.gloompersdelight.veil_mushroom_colony": "Veil Mushroom Colony",
-  "block.gloompersdelight.wild_chili_peppers": "Wild Chili Peppers",
-  "item.gloompersdelight.blood_bottle": "Blood Bottle",
-  "item.gloompersdelight.chili_pepper_seeds": "Chili Pepper Seeds",
   "item.gloompersdelight.cloggrum_knife": "Cloggrum Knife",
-  "item.gloompersdelight.cranberries": "Cranberries",
-  "item.gloompersdelight.cranberry_juice": "Cranberry Juice",
   "item.gloompersdelight.forgotten_knife": "Forgotten Knife",
   "item.gloompersdelight.froststeel_knife": "Froststeel Knife",
-  "item.gloompersdelight.gloomgourd_slice": "Gloomgourd Slice",
-  "item.gloompersdelight.gloomgourd_soup": "Gloomgourd Soup",
-  "item.gloompersdelight.swivel_floss": "Swivel Floss",
-  "item.gloompersdelight.under_fruit_salad": "Under Fruit Salad",
-  "item.gloompersdelight.utherium_knife": "Utherium Knife",
-  "itemGroup.gloompersdelight_group": "Gloomper's Delight"
+  "item.gloompersdelight.utherium_knife": "Utherium Knife"
 }

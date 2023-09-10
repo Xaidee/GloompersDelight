@@ -1,9 +1,9 @@
 package xaidee.gloompersdelight.data.lang;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 
 public class GDLangNZ extends GDLangGB {
-    public GDLangNZ(DataGenerator generator) {
-        super(generator, "nz");
+    public GDLangNZ(PackOutput output) {
+        super(output, "nz");
     }
 }

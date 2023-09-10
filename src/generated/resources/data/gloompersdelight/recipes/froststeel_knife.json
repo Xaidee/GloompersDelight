@@ -1,9 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " #",
-    "/ "
-  ],
+  "category": "equipment",
   "key": {
     "#": {
       "item": "undergarden:froststeel_ingot"
@@ -12,7 +9,12 @@
       "tag": "forge:rods/wooden"
     }
   },
+  "pattern": [
+    " #",
+    "/ "
+  ],
   "result": {
     "item": "gloompersdelight:froststeel_knife"
-  }
+  },
+  "show_notification": true
 }
