@@ -1,10 +1,7 @@
 package xaidee.gloompersdelight.data;
 
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -22,19 +19,19 @@ import static vectorwing.farmersdelight.data.recipe.CookingRecipes.NORMAL_COOKIN
 
 public class GDRecipes extends GDRecipeProvider {
 
-    public GDRecipes(PackOutput output) {
-        super(output);
+    public GDRecipes(DataGenerator generator) {
+        super(generator);
     }
 
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
         makeKnife(GDItems.CLOGGRUM_KNIFE, UGItems.CLOGGRUM_INGOT).save(consumer);
         makeKnife(GDItems.FROSTSTEEL_KNIFE, UGItems.FROSTSTEEL_INGOT).save(consumer);
         makeKnife(GDItems.UTHERIUM_KNIFE, UGItems.UTHERIUM_CRYSTAL).save(consumer);
 
         smithingForgotten(GDItems.CLOGGRUM_KNIFE, GDItems.FORGOTTEN_KNIFE).save(consumer, name("forgotten_knife_smithing"));
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.ORGANIC_COMPOST.get())
+        ShapelessRecipeBuilder.shapeless(ModItems.ORGANIC_COMPOST.get())
                 .requires(UGBlocks.DEEPSOIL.get())
                 .requires(Items.ROTTEN_FLESH)
                 .requires(Items.ROTTEN_FLESH)
@@ -47,7 +44,7 @@ public class GDRecipes extends GDRecipeProvider {
                 .unlockedBy("has_rotten_flesh", has(Items.ROTTEN_FLESH))
                 .unlockedBy("has_straw", has(ModItems.STRAW.get()))
                 .save(consumer, name("deepsoil_organic_compost_from_rotten_flesh"));
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.ORGANIC_COMPOST.get())
+        ShapelessRecipeBuilder.shapeless(ModItems.ORGANIC_COMPOST.get())
                 .requires(UGBlocks.DEEPSOIL.get())
                 .requires(ModItems.STRAW.get())
                 .requires(ModItems.STRAW.get())

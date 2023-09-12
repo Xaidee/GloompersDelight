@@ -1,9 +1,7 @@
 package xaidee.gloompersdelight.data.provider;
 
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
@@ -26,12 +24,12 @@ import java.util.function.Supplier;
 
 public abstract class GDRecipeProvider extends UGRecipeProvider {
 
-    public GDRecipeProvider(PackOutput output) {
-        super(output);
+    public GDRecipeProvider(DataGenerator generator) {
+        super(generator);
     }
 
     public ShapedRecipeBuilder makeKnife(Supplier<? extends Item> knifeOut, Supplier<? extends Item> materialIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, knifeOut.get())
+        return ShapedRecipeBuilder.shaped(knifeOut.get())
                 .pattern(" #")
                 .pattern("/ ")
                 .define('#', materialIn.get())

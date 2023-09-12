@@ -7,6 +7,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import quek.undergarden.registry.UGCreativeModeTabs;
 import quek.undergarden.registry.UGItemTiers;
 import quek.undergarden.registry.UGItems;
 import vectorwing.farmersdelight.common.item.KnifeItem;
@@ -22,6 +23,7 @@ public class GDKnifeItem extends KnifeItem {
                 .stacksTo(1)
                 .defaultDurability(tier.getUses())
                 .rarity(isForgotten(tier))
+                .tab(UGCreativeModeTabs.GROUP)
         );
     }
 

@@ -43,6 +43,5 @@
     "recipes": [
       "gloompersdelight:deepsoil_organic_compost_from_rotten_flesh"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

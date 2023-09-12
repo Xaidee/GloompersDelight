@@ -3,16 +3,16 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "gloompersdelight:utherium_knife"
+        "recipe": "gloompersdelight:forgotten_knife_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_utherium_crystal": {
+    "has_undergarden:forgotten_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "undergarden:utherium_crystal"
+              "undergarden:forgotten_ingot"
             ]
           }
         ]
@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_utherium_crystal",
+      "has_undergarden:forgotten_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "gloompersdelight:utherium_knife"
+      "gloompersdelight:forgotten_knife_smithing"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

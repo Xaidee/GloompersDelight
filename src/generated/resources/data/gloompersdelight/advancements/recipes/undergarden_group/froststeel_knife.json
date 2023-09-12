@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cloggrum_ingot": {
+    "has_froststeel_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "undergarden:cloggrum_ingot"
+              "undergarden:froststeel_ingot"
             ]
           }
         ]
@@ -15,21 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "gloompersdelight:cloggrum_knife"
+        "recipe": "gloompersdelight:froststeel_knife"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_cloggrum_ingot",
+      "has_froststeel_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "gloompersdelight:cloggrum_knife"
+      "gloompersdelight:froststeel_knife"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

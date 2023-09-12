@@ -1,7 +1,6 @@
 package xaidee.gloompersdelight.data.provider;
 
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -15,8 +14,8 @@ import java.util.function.Supplier;
 
 public abstract class GDItemModelProvider extends ItemModelProvider {
 
-    public GDItemModelProvider(PackOutput output, ExistingFileHelper fileHelper) {
-        super(output, GloompersDelight.MOD_ID, fileHelper);
+    public GDItemModelProvider(DataGenerator generator, ExistingFileHelper fileHelper) {
+        super(generator, GloompersDelight.MOD_ID, fileHelper);
     }
 
     private String blockName(Supplier<? extends Block> block) {

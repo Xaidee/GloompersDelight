@@ -1,7 +1,5 @@
 package xaidee.gloompersdelight.data.provider;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import net.minecraft.data.*;
 import net.minecraft.world.effect.MobEffect;
@@ -14,15 +12,11 @@ import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
-import org.apache.commons.lang3.text.translate.JavaUnicodeEscaper;
 import xaidee.gloompersdelight.GloompersDelight;
 
-import java.io.BufferedWriter;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Map;
-import java.util.Objects;
 import java.util.TreeMap;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
@@ -30,25 +24,23 @@ import java.util.function.Supplier;
 public abstract class GDLangProvider implements DataProvider {
 
     private final Map<String, String> data = new TreeMap<>();
-    private final PackOutput output;
+    private final DataGenerator gen;
     private final String modid;
     private final String locale;
 
-    public GDLangProvider(PackOutput output, String locale) {
+    public GDLangProvider(DataGenerator generator, String locale) {
         this.modid = GloompersDelight.MOD_ID;
-        this.output = output;
+        this.gen = generator;
         this.locale = locale;
     }
 
     protected abstract void addTranslations();
 
     @Override
-    public CompletableFuture<?> run(CachedOutput cache) {
+    public void run(CachedOutput cache) throws IOException {
         addTranslations();
         if (!data.isEmpty())
-            return save(cache, this.output.getOutputFolder(PackOutput.Target.RESOURCE_PACK).resolve(this.modid).resolve("lang").resolve(this.locale + ".json"));
-
-        return CompletableFuture.allOf();
+            save(cache, data, this.gen.getOutputFolder().resolve("assets/" + modid + "/lang/" + locale + ".json"));
     }
 
     @Override
@@ -56,12 +48,14 @@ public abstract class GDLangProvider implements DataProvider {
         return "Languages: " + locale;
     }
 
-    private CompletableFuture<?> save(CachedOutput cache, Path target) {
+    private void save(CachedOutput cache, Object object, Path target) throws IOException {
         // TODO: DataProvider.saveStable handles the caching and hashing already, but creating the JSON Object this way seems unreliable. -C
         JsonObject json = new JsonObject();
-        this.data.forEach(json::addProperty);
+        for (Map.Entry<String, String> pair : data.entrySet()) {
+            json.addProperty(pair.getKey(), pair.getValue());
+        }
 
-        return DataProvider.saveStable(cache, json, target);
+        DataProvider.saveStable(cache, json, target);
     }
 
     public void addBlock(Supplier<? extends Block> key, String name) {

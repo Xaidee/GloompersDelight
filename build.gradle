@@ -24,7 +24,7 @@ archivesBaseName = 'Gloomper\'s Delight-'+project.mc_version
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
-    mappings channel: 'parchment', version: project.parchment_version
+    mappings channel: 'parchment', version: project.parchment_version+'-'+project.mc_version
 
     runs {
         client {

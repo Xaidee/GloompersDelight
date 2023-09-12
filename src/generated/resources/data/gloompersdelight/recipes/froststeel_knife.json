@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "equipment",
   "key": {
     "#": {
       "item": "undergarden:froststeel_ingot"
@@ -15,6 +14,5 @@
   ],
   "result": {
     "item": "gloompersdelight:froststeel_knife"
-  },
-  "show_notification": true
+  }
 }

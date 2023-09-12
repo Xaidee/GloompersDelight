@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[46,)"
+loaderVersion="[43,)"
 issueTrackerURL="https://github.com/xaidee/GloompersDelight/issues/"
 license="The MIT License (MIT)"
 
@@ -26,13 +26,13 @@ An addon to the Undergarden and Farmer's Delight mods.
 [[dependencies.gloompersdelight]]
     modId="forge"
     mandatory=true
-    versionRange="[46,]"
+    versionRange="[43,]"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.gloompersdelight]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.20,1.21)"
+    versionRange="[1.19,1.19.4)"
     ordering="NONE"
     side="BOTH"

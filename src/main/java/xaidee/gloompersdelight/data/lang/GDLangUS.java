@@ -1,19 +1,19 @@
 package xaidee.gloompersdelight.data.lang;
 
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import xaidee.gloompersdelight.content.index.GDBlocks;
 import xaidee.gloompersdelight.content.index.GDItems;
 import xaidee.gloompersdelight.data.provider.GDLangProvider;
 
 public class GDLangUS extends GDLangProvider {
 
-    public GDLangUS(PackOutput output) {
-        super(output, "en_us");
+    public GDLangUS(DataGenerator generator) {
+        super(generator, "en_us");
     }
 
     // Used by other English variants that extend this class
-    public GDLangUS(PackOutput output, String subLocale) {
-        super(output, "en_" + subLocale);
+    public GDLangUS(DataGenerator generator, String subLocale) {
+        super(generator, "en_" + subLocale);
     }
 
     @Override

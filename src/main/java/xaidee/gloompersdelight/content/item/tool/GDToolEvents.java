@@ -1,6 +1,7 @@
 package xaidee.gloompersdelight.content.item.tool;
 
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.state.BlockState;
@@ -11,7 +12,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import quek.undergarden.Undergarden;
-import quek.undergarden.registry.UGEffects;
 import quek.undergarden.registry.UGTags;
 import xaidee.gloompersdelight.GloompersDelight;
 import xaidee.gloompersdelight.content.index.GDItems;
@@ -64,8 +64,7 @@ public class GDToolEvents {
         Entity source = event.getSource().getEntity();
         if(source instanceof Player player) {
             if(player.getMainHandItem().getItem() == GDItems.FROSTSTEEL_KNIFE.get()) {
-                event.getEntity().addEffect(new MobEffectInstance(UGEffects.CHILLY.get(), 600, 1, false, false));
-            }
+                event.getEntity().addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 600, 2));            }
         }
     }
 }

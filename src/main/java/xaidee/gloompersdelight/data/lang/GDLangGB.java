@@ -1,15 +1,15 @@
 package xaidee.gloompersdelight.data.lang;
 
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 
 public class GDLangGB extends GDLangUS {
 
-    public GDLangGB(PackOutput output) {
-        super(output, "gb");
+    public GDLangGB(DataGenerator generator) {
+        super(generator, "gb");
     }
 
-    public GDLangGB(PackOutput output, String subLocale) {
-        super(output, subLocale);
+    public GDLangGB(DataGenerator generator, String subLocale) {
+        super(generator, subLocale);
     }
 
     @Override

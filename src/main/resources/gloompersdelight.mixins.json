@@ -1,16 +1,9 @@
 {
   "required": true,
-  "minVersion": "0.8",
   "package": "xaidee.gloompersdelight.mixin",
   "compatibilityLevel": "JAVA_17",
+  "refmap": "gloompersdelight.refmap.json",
   "mixins": [
   ],
-  "client": [
-  ],
-  "server": [
-  ],
-  "injectors": {
-    "defaultRequire": 1
-  },
-  "refmap": "${refmap_target}refmap.json"
+  "minVersion": "0.8"
 }
